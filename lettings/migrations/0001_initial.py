@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
         #         ('country_iso_code', models.CharField(max_length=3, validators=[django.core.validators.MinLengthValidator(3)])),
         #     ],
         # ),
-        migrations.migrations.SeparateDatabaseAndState(
+        migrations.SeparateDatabaseAndState(
             database_operations=[],
             state_operations=[
                 migrations.CreateModel(
@@ -52,7 +52,7 @@ class Migration(migrations.Migration):
         #         ('address', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='lettings.Address')),
         #     ],
         # ),
-        migrations.migrations.SeparateDatabaseAndState(
+        migrations.SeparateDatabaseAndState(
             database_operations=[],
             state_operations=[
                 migrations.CreateModel(

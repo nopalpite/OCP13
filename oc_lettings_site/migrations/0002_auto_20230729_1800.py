@@ -14,10 +14,10 @@ class Migration(migrations.Migration):
         #     model_name='letting',
         #     name='address',
         # ),
-        migrations.migrations.SeparateDatabaseAndState(
+        migrations.SeparateDatabaseAndState(
             database_operations=[],
             state_operations=[
-                migrations.migrations.RemoveField(
+                migrations.RemoveField(
                     model_name="letting",
                     name="address",
                 )
@@ -29,10 +29,10 @@ class Migration(migrations.Migration):
         #     model_name='profile',
         #     name='user',
         # ),
-        migrations.migrations.SeparateDatabaseAndState(
+        migrations.SeparateDatabaseAndState(
             database_operations=[],
             state_operations=[
-                migrations.migrations.RemoveField(
+                migrations.RemoveField(
                     model_name="profile",
                     name="user",
                 )
@@ -42,7 +42,7 @@ class Migration(migrations.Migration):
         # migrations.DeleteModel(
         #     name='Address',
         # ),
-        migrations.migrations.SeparateDatabaseAndState(
+        migrations.SeparateDatabaseAndState(
             database_operations=[
                 migrations.AlterModelTable(
                     name='Address',
@@ -60,7 +60,7 @@ class Migration(migrations.Migration):
         # migrations.DeleteModel(
         #     name='Letting',
         # ),
-        migrations.migrations.SeparateDatabaseAndState(
+        migrations.SeparateDatabaseAndState(
             database_operations=[
                 migrations.AlterModelTable(
                     name='Letting',
@@ -77,7 +77,7 @@ class Migration(migrations.Migration):
         # migrations.DeleteModel(
         #     name='Profile',
         # ),
-        migrations.migrations.SeparateDatabaseAndState(
+        migrations.SeparateDatabaseAndState(
             database_operations=[
                 migrations.AlterModelTable(
                     name='Profile',

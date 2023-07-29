@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
         #         ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
         #     ],
         # ),
-       migrations.migrations.SeparateDatabaseAndState(
+       migrations.SeparateDatabaseAndState(
             database_operations=[],
             state_operations=[
                 migrations.CreateModel(

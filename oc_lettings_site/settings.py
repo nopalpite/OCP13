@@ -1,4 +1,6 @@
 import os
+import sentry_sdk
+from sentry_sdk.integrations.django import DjangoIntegration
 
 from pathlib import Path
 
@@ -114,3 +116,19 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static", ]
+
+# Sentry configuration
+
+sentry_sdk.init(
+  dsn="https://9069e4626158e64fb716148d50900e1a@o4505615626534912.ingest.sentry.io/4505615670378496",
+  integrations=[DjangoIntegration()],
+
+  # Set traces_sample_rate to 1.0 to capture 100%
+  # of transactions for performance monitoring.
+  # We recommend adjusting this value in production.
+  traces_sample_rate=1.0,
+
+  # If you wish to associate users to errors (assuming you are using
+  # django.contrib.auth) you may enable sending PII data.
+  send_default_pii=True
+)

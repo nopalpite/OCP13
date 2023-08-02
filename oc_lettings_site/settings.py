@@ -1,24 +1,28 @@
 import os
+import environ
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
-
 from pathlib import Path
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Setting up environment variables
+env = environ.Env()
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s'
+SECRET_KEY = env('SECRET_DJANGO_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Application definition
 
@@ -61,6 +65,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'oc_lettings_site.wsgi.application'
 
@@ -120,15 +125,7 @@ STATICFILES_DIRS = [BASE_DIR / "static", ]
 # Sentry configuration
 
 sentry_sdk.init(
-  dsn="https://9069e4626158e64fb716148d50900e1a@o4505615626534912.ingest.sentry.io/4505615670378496",
-  integrations=[DjangoIntegration()],
-
-  # Set traces_sample_rate to 1.0 to capture 100%
-  # of transactions for performance monitoring.
-  # We recommend adjusting this value in production.
-  traces_sample_rate=1.0,
-
-  # If you wish to associate users to errors (assuming you are using
-  # django.contrib.auth) you may enable sending PII data.
-  send_default_pii=True
+    dsn=env('SENTRY_DSN'),
+    integrations=[DjangoIntegration()],
+    send_default_pii=True
 )

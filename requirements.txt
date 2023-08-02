@@ -3,6 +3,7 @@ certifi==2023.7.22
 colorama==0.4.6
 coverage==7.2.7
 Django==3.0
+django-environ==0.10.0
 entrypoints==0.3
 exceptiongroup==1.1.2
 flake8==3.7.0

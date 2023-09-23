@@ -53,7 +53,7 @@ workflows:
           filters:
             branches:
               only:
-                - CI/CD-pipeline
+                - master
       - deployment:
           requires:
             - build-and-test
@@ -61,6 +61,6 @@ workflows:
           filters:
             branches:
               only:
-                - CI/CD-pipeline
+                - master
 
 

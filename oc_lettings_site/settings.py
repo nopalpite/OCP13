@@ -2,6 +2,7 @@ import os
 import environ
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
+from django.core.management.utils import get_random_secret_key
 from pathlib import Path
 
 
@@ -17,12 +18,12 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_DJANGO_KEY')
+SECRET_KEY = env('SECRET_DJANGO_KEY', default=get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
 
 # Application definition
 

@@ -9,7 +9,7 @@ Orange County Lettings website
 - Github account with read access to this repository
 - Git CLI
 - SQLite3 CLI
-- Python interpreter, version 3.6 or higher
+- Python interpreter, version 3.11 or higher
 
 In the rest of the documentation on local development, it is assumed that the python command in your OS shell runs the Python interpreter mentioned above (unless a virtual environment is activated).
 
@@ -189,7 +189,6 @@ In the rest of the documentation on local development, it is assumed that the py
 - Go to `http://localhost:8000/admin`
 - Connect with username `admin`, password `Abc1234!`
 
-Certainly, here is the Docker documentation for creating a Docker image for your Python-OC-Lettings-FR project and for pulling a Docker image from Docker Hub for the same project.
 
 ---
 

@@ -300,3 +300,7 @@ Use this DSN to configure your environnement variable within django and CircleCI
 | SENTRY_DSN    | Your Sentry project's DSN key        |
 
 5. Use the Deploy Hook in CircleCi environment variable
+
+## Documentation
+
+You can consult the documentation of this application [here](http://ocp13-documentation.rtfd.io/)

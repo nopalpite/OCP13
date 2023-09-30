@@ -1,40 +1,103 @@
 <!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-<html lang="en" data-content_root="./">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Local Development &#8212; OCP13  documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
-    <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Development &mdash; OCP13  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Deployment" href="deployment.html" />
-    <link rel="prev" title="Welcome to OCP13’s documentation!" href="index.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+    <link rel="prev" title="Welcome to OCP13’s documentation!" href="index.html" /> 
+</head>
 
-  </head><body>
-  
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
           
+          
+          <a href="index.html" class="icon icon-home">
+            OCP13
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Table of Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Local Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cloning-the-repository-unix-like-systems">Cloning the Repository (Unix-like Systems)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cloning-the-repository-windows">Cloning the Repository (Windows)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-the-virtual-environment-unix-like-systems">Creating the Virtual Environment (Unix-like Systems)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-the-virtual-environment-windows">Creating the Virtual Environment (Windows)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#environment-variables">Environment Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-the-env-file">Creating the <cite>.env</cite> File</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#defining-environment-variables">Defining Environment Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#running-the-website">Running the Website</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linting">Linting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unit-tests">Unit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#database">Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#admin-panel">Admin Panel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docker">Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-a-docker-image-and-run-it-locally">Creating a Docker Image and Run It Locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pulling-a-docker-image-from-docker-hub-and-run-it-locally">Pulling a Docker Image from Docker Hub and Run It Locally</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
+</ul>
 
-          <div class="body" role="main">
-            
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">OCP13</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Local Development</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/localdev.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
   <section id="local-development">
-<h1>Local Development<a class="headerlink" href="#local-development" title="Link to this heading">¶</a></h1>
+<h1>Local Development<a class="headerlink" href="#local-development" title="Link to this heading"></a></h1>
 <section id="prerequisites">
-<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">¶</a></h2>
+<h2>Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Github account with read access to this repository</p></li>
 <li><p>Git CLI</p></li>
@@ -44,14 +107,14 @@
 <p>In the rest of the documentation on local development, it is assumed that the <cite>python</cite> command in your OS shell runs the Python interpreter mentioned above (unless a virtual environment is activated).</p>
 </section>
 <section id="cloning-the-repository-unix-like-systems">
-<h2>Cloning the Repository (Unix-like Systems)<a class="headerlink" href="#cloning-the-repository-unix-like-systems" title="Link to this heading">¶</a></h2>
+<h2>Cloning the Repository (Unix-like Systems)<a class="headerlink" href="#cloning-the-repository-unix-like-systems" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/put/project/in</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/nopalpite/OCP13.git</span></code></p></li>
 </ul>
 </section>
 <section id="cloning-the-repository-windows">
-<h2>Cloning the Repository (Windows)<a class="headerlink" href="#cloning-the-repository-windows" title="Link to this heading">¶</a></h2>
+<h2>Cloning the Repository (Windows)<a class="headerlink" href="#cloning-the-repository-windows" title="Link to this heading"></a></h2>
 <ul>
 <li><p>Navigate to the directory where you want to put the project.</p></li>
 <li><p>Clone the repository by running:</p>
@@ -62,7 +125,7 @@
 </ul>
 </section>
 <section id="creating-the-virtual-environment-unix-like-systems">
-<h2>Creating the Virtual Environment (Unix-like Systems)<a class="headerlink" href="#creating-the-virtual-environment-unix-like-systems" title="Link to this heading">¶</a></h2>
+<h2>Creating the Virtual Environment (Unix-like Systems)<a class="headerlink" href="#creating-the-virtual-environment-unix-like-systems" title="Link to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/OCP13</span></code></p></li>
 <li><p>Create the virtual environment:</p>
@@ -103,7 +166,7 @@
 </ul>
 </section>
 <section id="creating-the-virtual-environment-windows">
-<h2>Creating the Virtual Environment (Windows)<a class="headerlink" href="#creating-the-virtual-environment-windows" title="Link to this heading">¶</a></h2>
+<h2>Creating the Virtual Environment (Windows)<a class="headerlink" href="#creating-the-virtual-environment-windows" title="Link to this heading"></a></h2>
 <ul>
 <li><p>Open a command prompt and navigate to the <cite>OCP13</cite> directory.</p></li>
 <li><p>Create the virtual environment:</p>
@@ -139,16 +202,16 @@
 </ul>
 </section>
 <section id="environment-variables">
-<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Link to this heading">¶</a></h2>
+<h2>Environment Variables<a class="headerlink" href="#environment-variables" title="Link to this heading"></a></h2>
 <section id="creating-the-env-file">
-<h3>Creating the <cite>.env</cite> File<a class="headerlink" href="#creating-the-env-file" title="Link to this heading">¶</a></h3>
+<h3>Creating the <cite>.env</cite> File<a class="headerlink" href="#creating-the-env-file" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>In the project’s root directory, create a file named <cite>.env</cite> if it doesn’t already exist.</p></li>
 <li><p>Open the <cite>.env</cite> file in a text editor of your choice.</p></li>
 </ul>
 </section>
 <section id="defining-environment-variables">
-<h3>Defining Environment Variables<a class="headerlink" href="#defining-environment-variables" title="Link to this heading">¶</a></h3>
+<h3>Defining Environment Variables<a class="headerlink" href="#defining-environment-variables" title="Link to this heading"></a></h3>
 <ul>
 <li><p>In the <cite>.env</cite> file, add the necessary environment variables. For the Django secret key and Sentry DSN, use appropriate variable names and assign them the corresponding values:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DJANGO_SECRET_KEY</span><span class="o">=</span><span class="n">YourDjangoSecretKey</span>
@@ -161,7 +224,7 @@
 </section>
 </section>
 <section id="running-the-website">
-<h2>Running the Website<a class="headerlink" href="#running-the-website" title="Link to this heading">¶</a></h2>
+<h2>Running the Website<a class="headerlink" href="#running-the-website" title="Link to this heading"></a></h2>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/OCP13</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">venv/bin/activate</span></code></p></li>
@@ -181,7 +244,7 @@
 </ul>
 </section>
 <section id="linting">
-<h2>Linting<a class="headerlink" href="#linting" title="Link to this heading">¶</a></h2>
+<h2>Linting<a class="headerlink" href="#linting" title="Link to this heading"></a></h2>
 <ul>
 <li><p>Navigate to the project directory:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">OCP13</span>
@@ -206,7 +269,7 @@
 </ul>
 </section>
 <section id="unit-tests">
-<h2>Unit Tests<a class="headerlink" href="#unit-tests" title="Link to this heading">¶</a></h2>
+<h2>Unit Tests<a class="headerlink" href="#unit-tests" title="Link to this heading"></a></h2>
 <ul>
 <li><p>Navigate to the project directory:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">OCP13</span>
@@ -231,7 +294,7 @@
 </ul>
 </section>
 <section id="database">
-<h2>Database<a class="headerlink" href="#database" title="Link to this heading">¶</a></h2>
+<h2>Database<a class="headerlink" href="#database" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path/to/OCP13</span></code></p></li>
 <li><p>Open a shell session with <cite>sqlite3</cite></p></li>
@@ -243,16 +306,16 @@
 </ul>
 </section>
 <section id="admin-panel">
-<h2>Admin Panel<a class="headerlink" href="#admin-panel" title="Link to this heading">¶</a></h2>
+<h2>Admin Panel<a class="headerlink" href="#admin-panel" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Go to <cite>http://localhost:8000/admin</cite></p></li>
 <li><p>Connect with username <cite>admin</cite>, password <cite>Abc1234!</cite></p></li>
 </ul>
 </section>
 <section id="docker">
-<h2>Docker<a class="headerlink" href="#docker" title="Link to this heading">¶</a></h2>
+<h2>Docker<a class="headerlink" href="#docker" title="Link to this heading"></a></h2>
 <section id="creating-a-docker-image-and-run-it-locally">
-<h3>Creating a Docker Image and Run It Locally<a class="headerlink" href="#creating-a-docker-image-and-run-it-locally" title="Link to this heading">¶</a></h3>
+<h3>Creating a Docker Image and Run It Locally<a class="headerlink" href="#creating-a-docker-image-and-run-it-locally" title="Link to this heading"></a></h3>
 <ol class="arabic">
 <li><p>Ensure that Docker is installed on your system. You can download Docker from the official website: <a class="reference external" href="https://www.docker.com/get-started">https://www.docker.com/get-started</a>.</p></li>
 <li><p>Navigate to the root directory of your OCP13 project where the Dockerfile is located.</p></li>
@@ -277,7 +340,7 @@
 </ol>
 </section>
 <section id="pulling-a-docker-image-from-docker-hub-and-run-it-locally">
-<h3>Pulling a Docker Image from Docker Hub and Run It Locally<a class="headerlink" href="#pulling-a-docker-image-from-docker-hub-and-run-it-locally" title="Link to this heading">¶</a></h3>
+<h3>Pulling a Docker Image from Docker Hub and Run It Locally<a class="headerlink" href="#pulling-a-docker-image-from-docker-hub-and-run-it-locally" title="Link to this heading"></a></h3>
 <ol class="arabic">
 <li><p>Ensure that Docker is installed on your system. You can download Docker from the official website: <a class="reference external" href="https://www.docker.com/get-started">https://www.docker.com/get-started</a>.</p></li>
 <li><p>Go to the Docker repository: <a class="reference external" href="https://hub.docker.com/repository/docker/nopalpite/ocp13/tags">https://hub.docker.com/repository/docker/nopalpite/ocp13/tags</a></p></li>
@@ -295,87 +358,34 @@
 </section>
 
 
+           </div>
           </div>
-          
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to OCP13’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="deployment.html" class="btn btn-neutral float-right" title="Deployment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, nopalpite.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">OCP13</a></h1>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
 
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Table of Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Local Development</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cloning-the-repository-unix-like-systems">Cloning the Repository (Unix-like Systems)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cloning-the-repository-windows">Cloning the Repository (Windows)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-the-virtual-environment-unix-like-systems">Creating the Virtual Environment (Unix-like Systems)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-the-virtual-environment-windows">Creating the Virtual Environment (Windows)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#environment-variables">Environment Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-the-website">Running the Website</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#linting">Linting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#unit-tests">Unit Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#database">Database</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#admin-panel">Admin Panel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#docker">Docker</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="deployment.html">Deployment</a></li>
-</ul>
-
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">Welcome to OCP13’s documentation!</a></li>
-      <li>Next: <a href="deployment.html" title="next chapter">Deployment</a></li>
-  </ul></li>
-</ul>
-</div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
-
-
-
-
-
-
-
-
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2023, nopalpite.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
-      
-      |
-      <a href="_sources/localdev.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+</body>
 </html>
